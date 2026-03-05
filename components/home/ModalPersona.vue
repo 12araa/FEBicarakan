@@ -5,6 +5,25 @@ const props = defineProps({
 });
 
 const emit = defineEmits(['close']);
+const router = useRouter();
+const isLoggedIn = ref(false);
+
+onMounted(() => {
+  const userData = localStorage.getItem('app_user');
+  if (userData) {
+    isLoggedIn.value = true;
+  }
+});
+
+const handleStartChat = () => {
+  if (!isLoggedIn.value) {
+    // Panggil showToast kalau kamu udah pasang, kalau belum pakai alert dulu
+    alert('Yuk, login dulu untuk klaim 20 kuota chat gratismu!');
+    router.push('/login');
+    return;
+  }
+  router.push(`/chat?persona_id=${props.persona.id}`);
+};
 
 const closeModal = () => {
   emit('close');
@@ -53,7 +72,7 @@ const closeModal = () => {
             </div>
           </div>
 
-          <NuxtLink :to="`/chat?persona_id=${persona.id}`" 
+          <NuxtLink @click="handleStartChat" 
                     class="block w-full py-4 bg-teal-600 text-white text-center rounded-2xl font-bold hover:bg-teal-700 shadow-lg shadow-teal-200 transition active:scale-95 cursor-pointer">
             Mulai Cerita Sekarang
           </NuxtLink>

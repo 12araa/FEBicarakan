@@ -23,6 +23,3 @@ logs
 .env.*
 !.env.example
 
-
-pages/chat.vue
-components/chat/
