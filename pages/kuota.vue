@@ -20,7 +20,7 @@ const switchTab = (tabName) => {
 </script>
 
 <template>
-  <div class="min-h-screen bg-slate-50 pt-8 pb-12 font-sans flex flex-col items-center">
+  <div class="animate-fade-in-up min-h-screen bg-slate-50 pt-8 pb-8 font-sans flex flex-col items-center">
     
     <div class="container mx-auto px-4 max-w-5xl">
       
@@ -34,7 +34,7 @@ const switchTab = (tabName) => {
       </div>
 
       <div class="text-center mb-10">
-        <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-3">
+        <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-2">
           Pilih Paket Sesuai Kebutuhanmu
         </h1>
         <p class="text-slate-500">
@@ -82,3 +82,18 @@ const switchTab = (tabName) => {
     </div>
   </div>
 </template>
+
+<style scoped>
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>

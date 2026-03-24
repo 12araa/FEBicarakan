@@ -12,8 +12,8 @@ onMounted(() => {
 </script>
 
 <template>
-  <section class="min-h-[85vh] flex items-center pt-16 pb-16 md:pt-32 md:pb-24 overflow-hidden">
-    <div class="container mx-auto px-4 max-w-6xl">
+  <section class="min-h-[85vh] flex items-center pt-16 pb-16 md:pt-32 md:pb-24 overflow-hidden ">
+    <div class="container mx-auto px-4 max-w-6xl animate-fade-in-up">
 
       <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
 
@@ -25,7 +25,7 @@ onMounted(() => {
           </div>
 
           <h1
-            class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight mb-4 md:mb-6">
+          class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight mb-4 md:mb-6">
             Ruang Untuk <br class="hidden lg:block" />
             <span class="text-teal-600">Setiap Cerita</span>
           </h1>
@@ -35,7 +35,7 @@ onMounted(() => {
             berbeda bersama AI kami.
           </p>
 
-          <div class="mt-8 flex flex-wrap items-center gap-4">
+          <div class="mt-8 flex flex-wrap items-center  gap-4">
 
             <NuxtLink to="#pilih-teman"
               class="bg-teal-600 hover:bg-teal-700 text-white px-8 py-3.5 rounded-full font-bold transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 inline-block">

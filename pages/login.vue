@@ -15,7 +15,7 @@ const isLoading = ref(false);
 
 const handleLogin = async () => {
   errorMessage.value = '';
-  
+
   if (!form.value.email || !form.value.password) {
     errorMessage.value = 'Email dan kata sandi wajib diisi ya!';
     return;
@@ -35,7 +35,7 @@ const handleLogin = async () => {
     const userData = {
       name: response.user.name,
       email: response.user.email,
-      token: response.token 
+      token: response.token
     };
 
     localStorage.setItem('app_user', JSON.stringify(userData));
@@ -59,18 +59,30 @@ const handleLogin = async () => {
 
 <template>
   <div class="min-h-screen bg-slate-50 flex flex-col justify-center items-center p-4 font-sans font-inter">
-    
+
     <div class="mb-8 text-center animate-fade-in-up">
-      <div class="w-16 h-16 bg-white rounded-2xl shadow-sm border border-slate-100 flex items-center justify-center text-3xl mx-auto mb-4">
-        👋
+      <div
+        class=" flex items-center justify-center">
+        <NuxtLink to="/" class="flex flex-col items-center justify-center gap-1 mb-5">
+          <div
+            class="w-14 h-14 bg-teal-600 rounded-2xl flex items-center justify-center text-white font-bold text-3xl shadow-lg">
+            B
+          </div>
+          <span class="font-extrabold text-slate-800 text-xl tracking-tight">
+            Bicarakan<span class="text-teal-600">Konsultan</span>
+          </span>
+        </NuxtLink>
       </div>
       <h1 class="text-2xl font-bold text-slate-800 tracking-tight">Selamat Datang Kembali</h1>
       <p class="text-slate-500 mt-1 text-sm">Masuk untuk melanjutkan sesi ceritamu.</p>
     </div>
 
-    <div class="bg-white w-full max-w-md rounded-[2rem] shadow-xl shadow-slate-200/50 p-8 border border-slate-100 animate-fade-in-up" style="animation-delay: 0.1s;">
-      
-      <div v-if="errorMessage" class="mb-6 p-4 bg-red-50 border border-red-100 text-red-600 text-sm rounded-xl flex items-center gap-2">
+    <div
+      class="bg-white w-full max-w-md rounded-[2rem] shadow-xl shadow-slate-200/50 p-8 border border-slate-100 animate-fade-in-up"
+      style="animation-delay: 0.1s;">
+
+      <div v-if="errorMessage"
+        class="mb-6 p-4 bg-red-50 border border-red-100 text-red-600 text-sm rounded-xl flex items-center gap-2">
         <span>⚠️</span> {{ errorMessage }}
       </div>
 
@@ -78,41 +90,31 @@ const handleLogin = async () => {
 
         <div>
           <label class="block text-sm font-bold text-slate-700 mb-1.5 ml-1">Email</label>
-          <input 
-            v-model="form.email"
-            type="email" 
-            placeholder="nama@email.com"
-            class="w-full px-5 py-3.5 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:ring-2 focus:ring-teal-500/20 focus:border-teal-500 transition-all outline-none text-slate-700 placeholder:text-slate-400"
-          >
+          <input v-model="form.email" type="email" placeholder="nama@email.com"
+            class="w-full px-5 py-3.5 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:ring-2 focus:ring-teal-500/20 focus:border-teal-500 transition-all outline-none text-slate-700 placeholder:text-slate-400">
         </div>
 
         <div>
           <div class="flex justify-between items-center mb-1.5 px-1">
-             <label class="block text-sm font-bold text-slate-700">Kata Sandi</label>
-             <a href="#" class="text-[11px] font-bold text-teal-600 hover:underline">Lupa Sandi?</a>
+            <label class="block text-sm font-bold text-slate-700">Kata Sandi</label>
+            <a href="#" class="text-[11px] font-bold text-teal-600 hover:underline">Lupa Sandi?</a>
           </div>
-          <input 
-            v-model="form.password"
-            type="password" 
-            placeholder="Masukkan kata sandimu"
-            class="w-full px-5 py-3.5 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:ring-2 focus:ring-teal-500/20 focus:border-teal-500 transition-all outline-none text-slate-700 placeholder:text-slate-400"
-          >
+          <input v-model="form.password" type="password" placeholder="Masukkan kata sandimu"
+            class="w-full px-5 py-3.5 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:ring-2 focus:ring-teal-500/20 focus:border-teal-500 transition-all outline-none text-slate-700 placeholder:text-slate-400">
         </div>
 
 
-        <button 
-          type="submit" 
-          :disabled="isLoading"
-          class="w-full mt-4 py-4 bg-slate-900 text-white rounded-xl font-bold text-sm hover:bg-slate-800 active:scale-[0.98] transition-all shadow-md shadow-slate-200 flex justify-center items-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
-        >
-          <span v-if="isLoading" class="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></span>
+        <button type="submit" :disabled="isLoading"
+          class="w-full mt-4 py-4 bg-slate-900 text-white rounded-xl font-bold text-sm hover:bg-slate-800 active:scale-[0.98] transition-all shadow-md shadow-slate-200 flex justify-center items-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed">
+          <span v-if="isLoading"
+            class="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></span>
           <span v-else>Masuk ke Akun</span>
         </button>
 
       </form>
 
       <p class="text-center text-sm text-slate-500 mt-8 font-medium">
-        Belum punya akun? 
+        Belum punya akun?
         <NuxtLink to="/register" class="text-teal-600 font-bold hover:underline">Daftar sekarang</NuxtLink>
       </p>
 

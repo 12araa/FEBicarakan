@@ -72,12 +72,12 @@ const handleLogout = () => {
                 <p class="text-xs text-slate-500 truncate">{{ user?.email }}</p>
               </div>
 
-              <NuxtLink to="/profile" class="block px-4 py-2.5 text-sm text-slate-600 hover:bg-teal-50 hover:text-teal-600 transition-colors">
+              <!-- <NuxtLink to="/profile" class="block px-4 py-2.5 text-sm text-slate-600 hover:bg-teal-50 hover:text-teal-600 transition-colors">
                 👤 Profil Saya
-              </NuxtLink>
+              </NuxtLink> -->
 
-              <NuxtLink to="/tickets" class="block px-4 py-2.5 text-sm text-slate-600 hover:bg-teal-50 hover:text-teal-600 transition-colors">
-                🎫 Tiket & Durasi
+              <NuxtLink to="/kuota?tab=your_plan" class="block px-4 py-2.5 text-sm text-slate-600 hover:bg-teal-50 hover:text-teal-600 transition-colors">
+                💬 Kuota Chat
               </NuxtLink>
 
               <div class="border-t border-slate-50 mt-1 pt-1">

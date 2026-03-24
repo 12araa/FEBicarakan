@@ -85,8 +85,16 @@ const handleRegister = async () => {
 
     <div class="mb-8 text-center animate-fade-in-up">
       <div
-        class="w-16 h-16 bg-white rounded-2xl shadow-sm border border-slate-100 flex items-center justify-center text-3xl mx-auto mb-4">
-        🌿
+        class=" flex items-center justify-center">
+        <NuxtLink to="/" class="flex flex-col items-center justify-center gap-1 mb-5">
+          <div
+            class="w-14 h-14 bg-teal-600 rounded-2xl flex items-center justify-center text-white font-bold text-3xl shadow-lg">
+            B
+          </div>
+          <span class="font-extrabold text-slate-800 text-xl tracking-tight">
+            Bicarakan<span class="text-teal-600">Konsultan</span>
+          </span>
+        </NuxtLink>
       </div>
       <h1 class="text-2xl font-bold text-slate-800 tracking-tight">Mulai Perjalananmu</h1>
       <p class="text-slate-500 mt-1 text-sm">Buat akun untuk ruang cerita yang aman.</p>

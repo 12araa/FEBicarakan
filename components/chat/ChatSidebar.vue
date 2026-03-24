@@ -3,17 +3,15 @@ const isSidebarOpen = ref(false);
 const sessionsList = ref([]);
 const activeSessionId = ref(null);
 const loggedInUser = ref(null);
-import ModalPersona from '../home/ModalPersona.vue';
 
-// Menerima data dari pages/chat.vue
 const props = defineProps({
   sessions: {
     type: Array,
-    default: () => [] // Berisi daftar history chat
+    default: () => [] 
   },
   activeSessionId: {
     type: String,
-    default: null // ID chat yang sedang dibuka
+    default: null 
   },
   user: {
     type: Object,
@@ -33,7 +31,6 @@ onMounted(async () => {
   }
 });
 
-// Mengirim event ke pages/chat.vue saat tombol diklik
 defineEmits(['newSession', 'loadSession', 'logout']);
 </script>
 
