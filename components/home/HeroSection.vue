@@ -37,7 +37,7 @@ onMounted(() => {
 
           <div class="mt-8 flex flex-wrap items-center  gap-4">
 
-            <NuxtLink to="#pilih-teman"
+            <NuxtLink to="#persona"
               class="bg-teal-600 hover:bg-teal-700 text-white px-8 py-3.5 rounded-full font-bold transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 inline-block">
               Cari Teman Cerita ↓
             </NuxtLink>
